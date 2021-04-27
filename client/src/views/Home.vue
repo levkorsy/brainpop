@@ -1,19 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <p>Majdi</p>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <TextFilter/>
+    <TypeFilter/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TextFilter from "@/components/filter.feature/TextFilter.component";
+import TypeFilter from "@/components/filter.feature/TypeFilter.component";
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    TypeFilter,
+    TextFilter,
   }
 }
 </script>
