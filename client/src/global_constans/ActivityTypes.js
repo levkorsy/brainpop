@@ -1,3 +1,7 @@
+//Structure===
+//--Main sector(clients, contacts)
+//------Tag (NA, BN, SC .....)
+//---------------Tag content|structure(name, elements, data.....)
 export const ActivityTypes = [
     {
         title: 'Movie',
@@ -64,9 +68,6 @@ export const ActivityTypes = [
 
 
 ];
-//Structure===
-//--Main sector(clients, contacts)
-//------Tag (NA, BN, SC .....)
-//---------------Tag content|structure(name, elements, data.....)
+
 
 
