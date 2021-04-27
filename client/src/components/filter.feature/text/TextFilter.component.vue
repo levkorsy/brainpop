@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3>Filter by:</h3>
+  <div class="wrapper">
+    <h2>Timeline</h2>
     <input type="text"/>
   </div>
 
@@ -8,10 +8,12 @@
 
 <script>
 export default {
-name: "TypeFilter"
+name: "TextFilter"
 }
 </script>
 
 <style scoped>
-
+.wrapper{
+  text-align: left;
+}
 </style>
