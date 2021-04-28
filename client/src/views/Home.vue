@@ -3,6 +3,7 @@
     <TextFilter/>
     <TypeFilter/>
     <MonthActivity v-for="(value, name) in activities" :monthActivities="value" :key="name" :month="getMonthTitle(name)"/>
+<ZoomModal/>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import TypeFilter from "@/components/filter.feature/type/TypeFilter.component";
 import MonthActivity from "@/components/activity.feature/MonthActivity.container";
 import {mapGetters, mapState} from "vuex";
 import moment from "moment";
+import ZoomModal from "@/components/activity.feature/layout/zoom/ZoomModal.component";
 
 
 export default {
@@ -22,6 +24,7 @@ export default {
     // ...mapGetters("activities", ["getActivities"]),
   },
   components: {
+    ZoomModal,
     MonthActivity,
     TypeFilter,
     TextFilter,
@@ -36,8 +39,6 @@ export default {
   },
   methods: {
     getMonthTitle(month){
-      // console.log(month,moment(1, 'M').format('MMMM'))
-      console.log(month)
       return moment(parseInt(month)+1, 'M').format('MMMM');
     }
   },

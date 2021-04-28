@@ -1,13 +1,14 @@
 <template>
-<div class="zoom-container">
+<div class="zoom-container" @click="open">
   <span><i class="far fa-eye"></i></span>
   <span class="title">View work</span>
+
 </div>
 </template>
 
 <script>
 export default {
-name: "ActivityZoom"
+name: "ActivityZoom",
 }
 </script>
 

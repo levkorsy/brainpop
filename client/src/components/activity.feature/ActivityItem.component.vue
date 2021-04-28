@@ -15,7 +15,7 @@
 import ActivityIcon from "@/components/activity.feature/layout/ActivityIcon.component";
 import ActivityBody from "@/components/activity.feature/layout/ActivityBody.component";
 import ActivityScore from "@/components/activity.feature/layout/ActivityScore.component";
-import ActivityZoom from "@/components/activity.feature/layout/ActivityZoom.component";
+import ActivityZoom from "@/components/activity.feature/layout/zoom/ActivityZoom.component";
 import {mapGetters, mapState} from "vuex";
 
 export default {
