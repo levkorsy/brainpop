@@ -2,7 +2,7 @@
   <div class="container">
     <TextFilter/>
     <TypeFilter/>
-    <MonthActivity :monthActivities="activities"/>
+    <MonthActivity v-for="(value, name) in activities" :monthActivities="value" :key="name" :month="getMonthTitle(name)"/>
   </div>
 </template>
 
@@ -11,7 +11,8 @@
 import TextFilter from "@/components/filter.feature/text/TextFilter.component";
 import TypeFilter from "@/components/filter.feature/type/TypeFilter.component";
 import MonthActivity from "@/components/activity.feature/MonthActivity.container";
-import { mapGetters, mapState } from "vuex";
+import {mapGetters, mapState} from "vuex";
+import moment from "moment";
 
 
 export default {
@@ -26,7 +27,7 @@ export default {
     TextFilter,
   },
   created() {
-  this.$store.dispatch("activities/fetchActivities")
+    this.$store.dispatch("activities/fetchActivities")
   },
   data() {
     return {
@@ -34,11 +35,11 @@ export default {
     }
   },
   methods: {
-    // fetchActivities() {
-    //   fetch('http://localhost:3000/activities/v1')
-    //       .then(response => response.json())
-    //       .then(data => this.activities = data);
-    // }
+    getMonthTitle(month){
+      // console.log(month,moment(1, 'M').format('MMMM'))
+      console.log(month)
+      return moment(parseInt(month)+1, 'M').format('MMMM');
+    }
   },
 }
 </script>
@@ -48,12 +49,14 @@ export default {
   flex-direction: column;
 
 }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+
 /*@media (min-width: 768px) {*/
 /*  .container {*/
 /*    width: 650px;*/

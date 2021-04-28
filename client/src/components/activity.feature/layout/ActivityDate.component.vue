@@ -13,7 +13,6 @@ name: "ActivityDate",
     }
   },
    mounted() {
-      console.log(moment(parseInt(this.date)).format())
    },
   methods:{
     formatDate(){

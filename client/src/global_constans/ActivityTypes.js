@@ -4,65 +4,72 @@
 //---------------Tag content|structure(name, elements, data.....)
 export const ActivityTypes = [
     {
-        title: 'Movie',
+        title: 'movie',
         options: {
-            Score: false,
-            Zoom: false
+            score: false,
+            zoom: false
         }
     },
     {
-        title: 'Quiz',
+        title: 'quiz',
         options: {
-            Score: true,
-            Zoom: true
+            score: true,
+            zoom: true
         }
     },
     {
-        title: 'Easy Quiz',
+        title: 'easy_quiz',
         options: {
-            Score: true,
-            Zoom: true
+            score: true,
+            zoom: true
         }
     },
     {
-        title: 'Challenge',
+        title: 'challenge',
         options: {
-            Score: true,
-            Zoom: true
+            score: true,
+            zoom: true
         }
     },
     {
-        title: 'Make a Map',
+        title: 'make_a_map',
         options: {
-            Score: false,
-            Zoom: true
+            score: false,
+            zoom: true
         }
     },{
-        title: 'Make a Movie',
+        title: 'make_a_movie',
         options: {
-            Score: false,
-            Zoom: true
+            score: false,
+            zoom: true
         }
     },
     {
-        title: 'Wordplay',
+        title: 'wordplay',
         options: {
-            Score: false,
-            Zoom: true
+            score: false,
+            zoom: true
         }
     },
     {
-        title: 'Related reading',
+        title: 'related_reading',
         options: {
-            Score: false,
-            Zoom: false
+            score: false,
+            zoom: false
         }
     },
     {
-        title: 'Draw about it',
+        title: 'draw_about_it',
         options: {
-            Score: false,
-            Zoom: true
+            score: false,
+            zoom: true
+        }
+    },
+    {
+        title: 'default',
+        options: {
+            score: false,
+            zoom: false
         }
     },
 

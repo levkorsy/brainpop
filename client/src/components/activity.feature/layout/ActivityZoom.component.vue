@@ -1,5 +1,8 @@
 <template>
-<div class="zoom-container">zoom</div>
+<div class="zoom-container">
+  <span><i class="far fa-eye"></i></span>
+  <span class="title">View work</span>
+</div>
 </template>
 
 <script>
@@ -10,8 +13,12 @@ name: "ActivityZoom"
 
 <style scoped>
 .zoom-container{
-  flex: 1;
+  flex: 2;
   color: #0ea999;
 font-weight:700;
+}
+.title{
+  white-space: nowrap;
+  margin-left: 0.5rem;
 }
 </style>

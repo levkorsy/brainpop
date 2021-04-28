@@ -1,13 +1,18 @@
 <template>
 <div class="score-container">
   Score
-  <strong>3/10</strong>
+  <strong>{{ activity.score }}/{{ activity.possible_score }}</strong>
 </div>
 </template>
 
 <script>
 export default {
-name: "ActivityScore"
+name: "ActivityScore",
+  props:{
+    activity:{
+      type: Object
+    }
+  }
 }
 </script>
 

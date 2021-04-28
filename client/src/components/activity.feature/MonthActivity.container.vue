@@ -1,6 +1,6 @@
 <template>
   <div class="month-container">
-    <div class="month">October</div>
+    <div class="month">{{ month }}</div>
     <ActivityItem v-for="activity in monthActivities" :key="activity.id" :activity="activity"/>
   </div>
 </template>
@@ -13,6 +13,10 @@ export default {
   props: {
     monthActivities: {
       type: Array
+    },
+    month:{
+      type:String,
+      default: ''
     }
   },
   components: {ActivityItem}

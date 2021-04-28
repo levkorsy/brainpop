@@ -5,8 +5,8 @@
   <ActivityBody :activity="activity"/>
   </div>
   <div class="right-col">
-  <ActivityScore/>
-  <ActivityZoom/>
+  <ActivityScore v-if="type.options.score" :activity="activity"/>
+  <ActivityZoom v-if="type.options.zoom" :activity="activity"/>
   </div>
 </div>
 </template>
@@ -16,9 +16,19 @@ import ActivityIcon from "@/components/activity.feature/layout/ActivityIcon.comp
 import ActivityBody from "@/components/activity.feature/layout/ActivityBody.component";
 import ActivityScore from "@/components/activity.feature/layout/ActivityScore.component";
 import ActivityZoom from "@/components/activity.feature/layout/ActivityZoom.component";
+import {mapGetters, mapState} from "vuex";
+
 export default {
   name: "ActivityItem",
   components: {ActivityZoom, ActivityScore, ActivityBody, ActivityIcon},
+  computed: {
+    // ...mapState("activities", ["activities"]),
+    ...mapGetters("activities", ["getActivityTypeById"]),
+
+    type: function () {
+      return this.getActivityTypeById(this.activity.resource_type)
+    }
+  },
   props:{
     activity:{
       type: Object
