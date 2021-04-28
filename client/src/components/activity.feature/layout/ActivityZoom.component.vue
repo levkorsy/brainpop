@@ -11,5 +11,7 @@ name: "ActivityZoom"
 <style scoped>
 .zoom-container{
   flex: 1;
+  color: #0ea999;
+font-weight:700;
 }
 </style>

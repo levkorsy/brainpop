@@ -1,5 +1,5 @@
 <template>
-<div>Date</div>
+<p>Date</p>
 </template>
 
 <script>
@@ -9,5 +9,8 @@ name: "ActivityDate"
 </script>
 
 <style scoped>
-
+  p {
+    margin: 0;
+    color: #8c8c8c;
+  }
 </style>

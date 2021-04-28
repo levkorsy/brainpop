@@ -27,13 +27,21 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .wrapper{
     display: flex;
     flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
     .btn-wrapper{
         display: flex;
         justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
+h3 {
+  font-size: 1rem;
+  color: #8c8c8c;
+}
 </style>
