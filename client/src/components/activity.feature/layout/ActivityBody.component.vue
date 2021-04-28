@@ -1,7 +1,7 @@
 <template>
 <div class="body-container">
-  <h2 class="title">Title</h2>
-  <ActivityDate/>
+  <h2 class="title">{{ activity.topic_data.name }} {{ activity.resource_type }}</h2>
+  <ActivityDate :date="activity.d_created"/>
 </div>
 </template>
 
@@ -9,7 +9,12 @@
 import ActivityDate from "@/components/activity.feature/layout/ActivityDate.component";
 export default {
 name: "ActivityBody",
-  components: {ActivityDate}
+  components: {ActivityDate},
+  props:{
+    activity:{
+      type: Object
+    }
+  }
 }
 </script>
 

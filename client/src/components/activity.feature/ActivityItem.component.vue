@@ -2,7 +2,7 @@
 <div class="activity-container">
   <div class="left-col">
   <ActivityIcon :icon="activity.topic_data.icon_path" :options="{ product: activity.product }"/>
-  <ActivityBody/>
+  <ActivityBody :activity="activity"/>
   </div>
   <div class="right-col">
   <ActivityScore/>

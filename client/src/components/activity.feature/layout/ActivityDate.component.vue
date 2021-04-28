@@ -1,10 +1,25 @@
 <template>
-<p>Date</p>
+<p>{{ formatDate(date) }}</p>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
-name: "ActivityDate"
+name: "ActivityDate",
+  props:{
+    date:{
+      type: String
+    }
+  },
+   mounted() {
+      console.log(moment(parseInt(this.date)).format())
+   },
+  methods:{
+    formatDate(){
+      return moment(parseInt(this.date)).format('MMM D YYYY, h:mm a')
+    }
+  },
 }
 </script>
 

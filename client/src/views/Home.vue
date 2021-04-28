@@ -26,8 +26,6 @@ export default {
     TextFilter,
   },
   created() {
-    console.log(this.getActivities)
-    // this.fetchActivities()
   this.$store.dispatch("activities/fetchActivities")
   },
   data() {

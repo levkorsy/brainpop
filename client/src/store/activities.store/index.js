@@ -5,9 +5,7 @@ export default {
     namespaced: true,
 
     state: {
-        activities: {
-            test:'514235412'
-        },
+        activities: [],
     },
 
     actions,
