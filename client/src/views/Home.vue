@@ -11,28 +11,36 @@
 import TextFilter from "@/components/filter.feature/text/TextFilter.component";
 import TypeFilter from "@/components/filter.feature/type/TypeFilter.component";
 import MonthActivity from "@/components/activity.feature/MonthActivity.container";
+import { mapGetters, mapState } from "vuex";
+
 
 export default {
   name: 'home',
+  computed: {
+    ...mapState("activities", ["activities"]),
+    // ...mapGetters("activities", ["getActivities"]),
+  },
   components: {
     MonthActivity,
     TypeFilter,
     TextFilter,
   },
   created() {
-    this.fetchActivities()
+    console.log(this.getActivities)
+    // this.fetchActivities()
+  this.$store.dispatch("activities/fetchActivities")
   },
   data() {
     return {
-      activities: []
+      // activities: this.getActivities
     }
   },
   methods: {
-    fetchActivities() {
-      fetch('http://localhost:3000/activities/v1')
-          .then(response => response.json())
-          .then(data => this.activities = data);
-    }
+    // fetchActivities() {
+    //   fetch('http://localhost:3000/activities/v1')
+    //       .then(response => response.json())
+    //       .then(data => this.activities = data);
+    // }
   },
 }
 </script>
