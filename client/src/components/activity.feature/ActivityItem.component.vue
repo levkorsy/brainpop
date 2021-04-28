@@ -1,9 +1,13 @@
 <template>
 <div class="activity-container">
+  <div class="left-col">
   <ActivityIcon :icon="activity.topic_data.icon_path" :options="{ product: activity.product }"/>
   <ActivityBody/>
+  </div>
+  <div class="right-col">
   <ActivityScore/>
   <ActivityZoom/>
+  </div>
 </div>
 </template>
 
@@ -23,13 +27,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .activity-container{
-  height: 10rem;
-  border: #42b983 1px solid;
+  height: 5rem;
+  border: #cbcbcb7a 2px solid;
   width: 100%;
-  margin: 2rem 0rem;
+  margin: 0.5rem 0rem;
   display: flex;
+  padding: 0 30px 0 15px;
+  position: relative;
+  border-radius: 5px;
+  &::before {
+    content: "";
+    border-left: 2px solid #cbcbcb7a ;
+    position: absolute;
+    height: 18px;
+    top: -19px;
+    left: 39px
+  }
+}
+.left-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-col {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>

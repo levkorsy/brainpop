@@ -24,6 +24,7 @@ export default {
 .icon-container{
   height: 2rem;
   flex: 1;
+  margin-right: 10px;
 }
 .activity-icon{
   height: 100%;
