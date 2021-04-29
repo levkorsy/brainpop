@@ -1,5 +1,5 @@
 <template>
-<div class="zoom-container" @click="open">
+<div class="zoom-container" @click="openModal(activity.id)">
   <span><i class="far fa-eye"></i></span>
   <span class="title">View work</span>
 
@@ -7,8 +7,21 @@
 </template>
 
 <script>
+import openModal from "@/utils/modalUtils";
+
 export default {
 name: "ActivityZoom",
+  props:{
+    activity:{
+      type: Object
+    }
+  },
+  mixins:[openModal],
+  methods:{
+  open(id){
+    this.$store.dispatch("activities/setDataForModal", {id})
+  }
+  },
 }
 </script>
 
@@ -17,6 +30,7 @@ name: "ActivityZoom",
   flex: 2;
   color: #0ea999;
 font-weight:700;
+  cursor: pointer;
 }
 .title{
   white-space: nowrap;
