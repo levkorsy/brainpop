@@ -1,0 +1,4 @@
+ * animation css
+ * format types title (uppercase)
+ * change trigger modal
+* finish icon logic
