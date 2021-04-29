@@ -1,8 +1,6 @@
 export default {
     mounted() {
-        console.log('from mixin')
-        console.log(this.$route.name==='zoom');
-        console.log(this.$route.path);
+        this.$route.name==='zoom' && this.openModal(this.$route.params.id)
     },
     methods: {
         openModal(id) {

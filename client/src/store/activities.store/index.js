@@ -9,9 +9,7 @@ export default {
         activities: [],
         activityTypes: ActivityTypes,
         modalData: null
-
     },
-
     actions,
     mutations,
     getters: {

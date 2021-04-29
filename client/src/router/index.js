@@ -11,7 +11,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/zoom',
+    path: '/zoom/:id',
     name: 'zoom',
     component: Home,
   },

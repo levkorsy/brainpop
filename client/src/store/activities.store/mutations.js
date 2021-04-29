@@ -3,7 +3,6 @@ export const setActivities = (state, payload) => {
 };
 
 export const setDataForModal = (state, payload) => {
-    console.log(payload, 'mut')
     state.modalData = payload;
 };
 
