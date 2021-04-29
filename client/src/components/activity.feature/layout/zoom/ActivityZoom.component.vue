@@ -19,7 +19,7 @@ name: "ActivityZoom",
   mixins:[openModal],
   methods:{
   open(id){
-    this.$store.dispatch("activities/setDataForModal", {id})
+    this.$store.dispatch("activities/getDataForModal", {id})
   }
   },
 }

@@ -13,12 +13,22 @@ export async function fetchActivities({commit, state}) {
     }
 }
 
-export function getDataForModal({commit, state}, id) {
+export async function getDataForModal({commit, state}, id) {
+    console.log(id)
     let singleActivity = null
-    for (const [key, value] of Object.entries(state.activities)) {
+   for (const [key, value] of Object.entries(state.activities)) {
         singleActivity = value.find(item => {
             return item.id === id
         })
-            singleActivity && commit("setDataForModal", singleActivity)
+
+        singleActivity && commit("setDataForModal", singleActivity)
     }
+    // commit("setDataForModal", singleActivity)
+
+}
+export async function resetDataForModal({commit, state}) {
+
+        commit("setDataForModal", null)
+
+
 }

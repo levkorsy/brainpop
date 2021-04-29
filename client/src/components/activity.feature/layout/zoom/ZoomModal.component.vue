@@ -1,6 +1,7 @@
 <template>
 <div class="modal-container">
   {{  activity.id }}
+  <button @click="close">X</button>
 </div>
 </template>
 
@@ -12,6 +13,12 @@ name: "ZoomModal",
       type: Object
     }
   },
+  methods:{
+  close(){
+    this.$store.dispatch("activities/resetDataForModal")
+
+  }
+  }
 }
 </script>
 
