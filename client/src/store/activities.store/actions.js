@@ -14,7 +14,6 @@ export async function fetchActivities({commit, state}) {
 }
 
 export async function getDataForModal({commit, state}, id) {
-    console.log(id)
     let singleActivity = null
    for (const [key, value] of Object.entries(state.activities)) {
         singleActivity = value.find(item => {

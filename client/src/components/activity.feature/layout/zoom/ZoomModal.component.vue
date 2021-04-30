@@ -1,22 +1,17 @@
 <template>
     <div class="modal-container">
-<!--        {{ activity.id }}-->
         <span class="close-trigger" @click="close">
       <i class="fas fa-times"></i>
     </span>
-
         <div class="top-row">
             <div class="placeholder">
                 <ActivityIcon :icon="activity.topic_data.icon_path" :options="{ product: activity.product }"/>
             </div>
-            <h1>Dna Movie Quiz</h1>
-<!--            <p>Oct 28, 2019 6:25 pm</p>-->
+            <h1>{{ activity.topic_data.name }} {{ activity.resource_type }}</h1>
             <ActivityDate :date="activity.d_created"/>
         </div>
-
         <div class="bottom-row">
             <h3>Great job!</h3>
-<!--            <p class="score">Score <strong>3/10</strong></p>-->
             <ActivityScore v-if="type.options.score" :activity="activity"/>
         </div>
 
@@ -106,11 +101,13 @@
         border-radius: 50%;
         padding: 2px 5px;
         cursor: pointer;
+
     }
 
     .close-trigger:hover {
         opacity: 0.6;
         transform: scale(1.1);
+      transition: all ease-in-out 0.2s;
     }
 
     storng {
@@ -122,8 +119,8 @@
     }
 
     .placeholder {
-        width: 50px;
-        height: 50px;
+        /*width: 50px;*/
+        /*height: 50px;*/
         /*background: grey;*/
         border-radius: 50%;
     }
