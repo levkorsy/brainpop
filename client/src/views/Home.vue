@@ -3,6 +3,7 @@
     <TextFilter/>
     <TypeFilter/>
     <MonthActivity v-for="(value, name) in activities" :monthActivities="value" :key="name" :month="getMonthTitle(name)"/>
+    <h2 v-if="!Object.keys(activities).length" >No activities</h2>
     <ZoomModal v-if="modalData" :activity="modalData"/>
   </div>
 </template>

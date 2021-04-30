@@ -41,6 +41,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: 100%;
 }
 
 h3 {

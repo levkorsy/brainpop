@@ -38,6 +38,7 @@ $bgColor: var(--bg-color);
   margin-right: 10px;
   background-color: var(--bg-color);
   border-radius: 50%;
+  position: relative;
 }
 
 .activity-icon {
@@ -49,8 +50,8 @@ $bgColor: var(--bg-color);
   background-color: #fdca64;
   border-radius: 50%;
   position: absolute;
-  top: 2.8rem;
-  left: 2.8rem;
+  top: 1.8rem;
+  left: 1.8rem;
   font-size: 0.7rem;
   font-weight: 900;
 }

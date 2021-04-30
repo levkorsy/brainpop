@@ -2,16 +2,25 @@
   <div class="wrapper">
     <h2>Timeline</h2>
     <div class="input-container">
-    <input placeholder="Search Timeline" type="text"/>
-    <div class="search-icon">d</div>
+    <input placeholder="Search Timeline" type="text" v-model="searchQuery"/>
+<!--    <input placeholder="Search Timeline" type="text" @input="filterByText(searchQuery)" v-model="searchQuery"/>-->
+    <div class="search-icon" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
     </div>
   </div>
 
 </template>
 
 <script>
+import filterByText from "@/utils/filterUtils";
+
 export default {
-name: "TextFilter"
+name: "TextFilter",
+  mixins:[filterByText],
+  data(){
+  return {
+    searchQuery: null
+  }
+  },
 }
 </script>
 
@@ -44,6 +53,7 @@ name: "TextFilter"
     align-items: center;
     justify-content: center;
     border-radius: 0 4px 4px 0;
+    cursor: pointer;
 
   }
 }

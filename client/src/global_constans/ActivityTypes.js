@@ -66,7 +66,7 @@ export const ActivityTypes = [
         }
     },
     {
-        title: 'default',
+        title: 'all_work',
         options: {
             score: false,
             zoom: false

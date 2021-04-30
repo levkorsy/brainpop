@@ -23,6 +23,7 @@ name: "ActivityBody",
   flex: 12;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   .title {
     font-size: 1rem;

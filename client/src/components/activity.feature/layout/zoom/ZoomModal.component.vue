@@ -11,7 +11,7 @@
             <ActivityDate :date="activity.d_created"/>
         </div>
         <div class="bottom-row">
-            <h3>Great job!</h3>
+            <h3>{{ activity.comment }}!</h3>
             <ActivityScore v-if="type.options.score" :activity="activity"/>
         </div>
 

@@ -21,7 +21,7 @@ export default {
             return state.activityTypes;
         },
         getActivityTypeById: (state) => (title) => {
-            return state.activityTypes.find(type => type.title === title)  ? state.activityTypes.find(type => type.title === title) : state.activityTypes.find(type => type.title === 'default')
+            return state.activityTypes.find(type => type.title === title)  ? state.activityTypes.find(type => type.title === title) : state.activityTypes.find(type => type.title === 'all_work')
         }
     }
 };
