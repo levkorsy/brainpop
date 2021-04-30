@@ -8,6 +8,7 @@ export default {
     state: {
         activities: [],
         activityTypes: ActivityTypes,
+        currentFilter: 'all_work',
         modalData: null
     },
     actions,
@@ -22,6 +23,9 @@ export default {
         },
         getActivityTypeById: (state) => (title) => {
             return state.activityTypes.find(type => type.title === title)  ? state.activityTypes.find(type => type.title === title) : state.activityTypes.find(type => type.title === 'all_work')
-        }
+        },
+        getCurrentFilterType: state => {
+            return state.currentFilter;
+        },
     }
 };

@@ -1,9 +1,11 @@
 <template>
-  <button @click="filterByType(filterType.title)">{{ filterType.title }}</button>
+  <button @click="filterByType(filterType.title)" :class="{'active': currentFilter === filterType.title}"><i class="fas fa-check-circle" v-if="currentFilter === filterType.title"></i>{{ filterType.title }}</button>
+
 </template>
 
 <script>
 import filterByType from "@/utils/filterUtils";
+import {mapState} from "vuex";
 
 export default {
   name: "TypeItem",
@@ -13,6 +15,9 @@ export default {
       required: true,
       default: null
     }
+  },
+  computed: {
+    ...mapState("activities", ["currentFilter"]),
   },
   mixins:[filterByType],
 }
@@ -33,6 +38,11 @@ button {
   &:not(:last-child) {
     margin-right: 5px;
   }
-
+  i{
+    margin-right: 0.5rem;
+  }
+}
+.active{
+  background-color: #edfdfc;
 }
 </style>

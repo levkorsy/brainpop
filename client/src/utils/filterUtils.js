@@ -2,6 +2,7 @@ export default {
     methods: {
         filterByType(type) {
             type ==="all_work" ? this.$store.dispatch("activities/fetchActivities") : this.$store.dispatch("activities/filterByTypeForVuex", type)
+            this.$store.dispatch("activities/getCurrentFilter", type)
         },
 
         filterByText(text) {

@@ -4,6 +4,13 @@
 //---------------Tag content|structure(name, elements, data.....)
 export const ActivityTypes = [
     {
+        title: 'all_work',
+        options: {
+            score: false,
+            zoom: false
+        }
+    },
+    {
         title: 'movie',
         options: {
             score: false,
@@ -65,13 +72,7 @@ export const ActivityTypes = [
             zoom: true
         }
     },
-    {
-        title: 'all_work',
-        options: {
-            score: false,
-            zoom: false
-        }
-    },
+
 
 
 ];

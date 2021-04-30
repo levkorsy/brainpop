@@ -5,4 +5,7 @@ export const setActivities = (state, payload) => {
 export const setDataForModal = (state, payload) => {
     state.modalData = payload;
 };
+export const setCurrentFilter = (state, payload) => {
+    state.currentFilter = payload;
+};
 

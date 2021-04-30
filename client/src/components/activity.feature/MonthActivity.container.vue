@@ -1,7 +1,7 @@
 <template>
   <div class="month-container">
-    <div class="month">{{ month }}</div>
-    <ActivityItem v-for="activity in monthActivities" :key="activity.id" :activity="activity"/>
+    <div class="month" @click="showMonthItem = !showMonthItem">{{ month }}</div>
+    <ActivityItem v-for="activity in monthActivities" :key="activity.id" :activity="activity" v-show="showMonthItem"/>
   </div>
 </template>
 
@@ -19,7 +19,12 @@ export default {
       default: ''
     }
   },
-  components: {ActivityItem}
+  components: {ActivityItem},
+  data(){
+    return{
+      showMonthItem: true
+    }
+  }
 }
 </script>
 
@@ -31,9 +36,9 @@ export default {
 }
 .month {
   padding: 5px 15px;
-  background: red;
   border-radius: 35px;
   background: #ffd40029;
   margin-bottom: 9px;
+  cursor: pointer;
 }
 </style>

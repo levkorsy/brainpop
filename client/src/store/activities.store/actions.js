@@ -29,6 +29,9 @@ export async function getDataForModal({commit, state}, id) {
 export async function resetDataForModal({commit, state}) {
         commit("setDataForModal", null)
 }
+export async function getCurrentFilter({commit, state}, type) {
+        commit("setCurrentFilter", type)
+}
 export async function filterByTypeForVuex({commit, state}, type) {
     try {
         fetch('http://localhost:3000/activities/v1')

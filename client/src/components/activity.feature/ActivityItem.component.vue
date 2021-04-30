@@ -1,12 +1,16 @@
 <template>
 <div class="activity-container">
-  <div class="left-col">
+  <div class="left-col" v-show="showItem">
   <ActivityIcon :icon="activity.topic_data.icon_path" :options="{ product: activity.product }"/>
   <ActivityBody :activity="activity"/>
   </div>
-  <div class="right-col">
+  <div class="right-col" v-show="showItem">
   <ActivityScore v-if="type.options.score" :activity="activity"/>
   <ActivityZoom v-if="type.options.zoom" :activity="activity"/>
+
+  </div>
+  <div class="item-toggle" @click="showItem = !showItem">
+    <i class="fas fa-check"></i>
   </div>
 </div>
 </template>
@@ -32,6 +36,11 @@ export default {
   props:{
     activity:{
       type: Object
+    }
+  },
+  data(){
+    return{
+      showItem: true
     }
   }
 }
@@ -66,6 +75,14 @@ export default {
   margin-left: auto;
   justify-content: center;
   align-items: center;
-}
 
+}
+.item-toggle{
+  padding-left: 1rem;
+  color: #42b983;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

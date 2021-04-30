@@ -23,7 +23,6 @@ export default {
   name: 'home',
   computed: {
     ...mapState("activities", ["activities", "modalData"]),
-    // ...mapGetters("activities", ["getActivities"]),
   },
   components: {
     ZoomModal,

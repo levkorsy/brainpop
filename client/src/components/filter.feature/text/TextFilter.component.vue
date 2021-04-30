@@ -2,7 +2,7 @@
   <div class="wrapper">
     <h2>Timeline</h2>
     <div class="input-container">
-    <input placeholder="Search Timeline" type="text" v-model="searchQuery"/>
+    <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)"/>
 <!--    <input placeholder="Search Timeline" type="text" @input="filterByText(searchQuery)" v-model="searchQuery"/>-->
     <div class="search-icon" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
     </div>
