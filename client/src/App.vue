@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">V1</router-link> |
+      <router-link to="/v2">V2</router-link>
     </div>
-    <router-view/>
+    <router-view :key="$route.name"/>
   </div>
 </template>
 

@@ -3,6 +3,7 @@
     <TextFilter/>
     <TypeFilter/>
     <MonthActivity v-for="(value, name) in activities" :monthActivities="value" :key="name" :month="getMonthTitle(name)"/>
+<Pagination/>
     <h2 v-if="!Object.keys(activities).length" >No activities</h2>
     <ZoomModal v-if="modalData" :activity="modalData"/>
   </div>
@@ -17,6 +18,7 @@ import {mapGetters, mapState} from "vuex";
 import moment from "moment";
 import ZoomModal from "@/components/activity.feature/layout/zoom/ZoomModal.component";
 import openModal from "@/utils/modalUtils";
+import Pagination from "../components/activity.feature/Pagination.component";
 
 
 export default {
@@ -25,6 +27,7 @@ export default {
     ...mapState("activities", ["activities", "modalData"]),
   },
   components: {
+    Pagination,
     ZoomModal,
     MonthActivity,
     TypeFilter,
@@ -32,7 +35,9 @@ export default {
   },
   mixins:[openModal],
   created() {
-    this.$store.dispatch("activities/fetchActivities")
+      console.log(this.$route.name==='home-v-2')
+      this.$route.name==='home-v-2' && this.$store.dispatch("activities/setUrl",[])
+      this.$store.dispatch("activities/fetchActivities")
   },
   data() {
     return {
@@ -60,19 +65,4 @@ export default {
   margin-left: auto;
 }
 
-/*@media (min-width: 768px) {*/
-/*  .container {*/
-/*    width: 650px;*/
-/*  }*/
-/*}*/
-/*@media (min-width: 992px) {*/
-/*  .container {*/
-/*    width: 970px;*/
-/*  }*/
-/*}*/
-/*@media (min-width: 1200px) {*/
-/*  .container {*/
-/*    width: 1170px;*/
-/*  }*/
-/*}*/
 </style>

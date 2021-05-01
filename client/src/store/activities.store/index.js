@@ -9,7 +9,12 @@ export default {
         activities: [],
         activityTypes: ActivityTypes,
         currentFilter: 'all_work',
-        modalData: null
+        modalData: null,
+        suggestionsList: [],
+        url:{
+            activities:'activities/v1',
+            main:'http://localhost:3000/'
+        }
     },
     actions,
     mutations,
@@ -26,6 +31,9 @@ export default {
         },
         getCurrentFilterType: state => {
             return state.currentFilter;
+        },
+        getSuggestions: state => {
+            return state.suggestionsList;
         },
     }
 };

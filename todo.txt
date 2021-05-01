@@ -7,3 +7,14 @@
  * add debounced to text filter
  * change variables name
  *fix item toggle
+ * make order in all components
+ * change the main green color
+ * add comments to the code
+ * autofill check the props
+ * garbage collector
+ * debounced not to send every input
+ *fix the bug with setter in comouted
+ * fix css of sugest list
+ * think about global css
+ * loader ???????
+* router with functions

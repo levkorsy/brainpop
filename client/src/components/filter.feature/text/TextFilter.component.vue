@@ -2,20 +2,25 @@
   <div class="wrapper">
     <h2>Timeline</h2>
     <div class="input-container">
-    <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)"/>
+    <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)" @input="suggestionsList(searchQuery)"/>
 <!--    <input placeholder="Search Timeline" type="text" @input="filterByText(searchQuery)" v-model="searchQuery"/>-->
     <div class="search-icon" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
+      <AutoSuggestList />
+
     </div>
   </div>
 
 </template>
 
 <script>
-import filterByText from "@/utils/filterUtils";
+import filterByText  from "@/utils/filterUtils";
+import suggestionsList  from "@/utils/filterUtils";
+import AutoSuggestList from "./AutoSuggestList.component";
 
 export default {
 name: "TextFilter",
-  mixins:[filterByText],
+  components: {AutoSuggestList},
+  mixins:[filterByText, suggestionsList],
   data(){
   return {
     searchQuery: null
@@ -34,6 +39,7 @@ name: "TextFilter",
   display: flex;
   height: 30px;
   width: 350px;
+  position: relative;
   input {
     width: 100%;
     padding: 5px;

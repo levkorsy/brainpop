@@ -1,5 +1,5 @@
 <template>
-<div class="activity-container">
+<div class="activity-container" :class="{'hidden-item': !showItem}">
   <div class="left-col" v-show="showItem">
   <ActivityIcon :icon="activity.topic_data.icon_path" :options="{ product: activity.product }"/>
   <ActivityBody :activity="activity"/>
@@ -10,7 +10,7 @@
 
   </div>
   <div class="item-toggle" @click="showItem = !showItem">
-    <i class="fas fa-check"></i>
+    <i :class="showItem ? 'fas fa-chevron-left' : 'fas fa-chevron-right'" :title="showItem ? 'Hide' : 'Show'"></i>
   </div>
 </div>
 </template>
@@ -79,10 +79,13 @@ export default {
 }
 .item-toggle{
   padding-left: 1rem;
-  color: #42b983;
+  color: #0ea999;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+  .hidden-item{
+    width: auto;
+  }
 </style>

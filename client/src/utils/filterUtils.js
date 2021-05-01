@@ -7,6 +7,10 @@ export default {
 
         filterByText(text) {
             this.$store.dispatch("activities/filterByTextForVuex", text)
+            this.$store.dispatch("activities/getSuggestionsList", null)
+        },
+        suggestionsList(text) {
+            this.$store.dispatch("activities/getSuggestionsList", text)
         },
 
 
