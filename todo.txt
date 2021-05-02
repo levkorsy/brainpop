@@ -1,8 +1,8 @@
  * animation css
  * format types title (uppercase)
- * change trigger modal
+ * change trigger modal ----------------------done
  * finish icon logic  ------------------------done
- * sort the filter types by alphabet
+ * sort the filter types by alphabet----------done
  * made the filter dynamic
  * add debounced to text filter
  * change variables name

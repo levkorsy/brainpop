@@ -2,7 +2,7 @@
   <div class="wrapper">
     <h2>Timeline</h2>
     <div class="input-container">
-    <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)" @input="suggestionsList(searchQuery)"/>
+    <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)" @input="suggestionsListDebounced(searchQuery)"/>
 <!--    <input placeholder="Search Timeline" type="text" @input="filterByText(searchQuery)" v-model="searchQuery"/>-->
     <div class="search-icon" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
       <AutoSuggestList />
@@ -16,6 +16,7 @@
 import filterByText  from "@/utils/filterUtils";
 import suggestionsList  from "@/utils/filterUtils";
 import AutoSuggestList from "./AutoSuggestList.component";
+import _ from 'lodash';
 
 export default {
 name: "TextFilter",
@@ -26,6 +27,11 @@ name: "TextFilter",
     searchQuery: null
   }
   },
+  methods:{
+    suggestionsListDebounced:_.debounce( function (text){
+      this.$store.dispatch("activities/getSuggestionsList", text)
+    }, 1000)
+  }
 }
 </script>
 

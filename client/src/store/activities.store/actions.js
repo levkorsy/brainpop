@@ -30,7 +30,6 @@ function prepareData(data, url){
 }
 
 export async function fetchActivities({commit, state}, amount = 10) {
-    console.log(router.currentRoute.name)
     router.currentRoute.name === 'home' && commit("setActivitiesUrl", 'activities/v1')
     router.currentRoute.name === 'home-v-2' && commit("setActivitiesUrl", 'activities/v2')
     try {
@@ -70,7 +69,8 @@ export async function filterByTypeForVuex({commit, state}, type) {
         fetch(state.url.main + state.url.activities)
             .then(response => response.json())
             .then(data =>{
-                 return data.filter(item=> item.resource_type === type)
+                data = prepareData(data, state.url.activities)
+                return data.filter(item=> item.resource_type === type)
             } )
             .then(async data => {
                 let sortedData = sortDataByMonth(data)
@@ -86,6 +86,7 @@ export async function filterByTextForVuex({commit, state}, text) {
             .then(response => response.json())
             .then(data =>{
                  // return data.filter(item=> item.resource_type === type)
+                data = prepareData(data, state.url.activities)
                let filteredData = filterItems(data, text)
                 return filteredData
             } )
@@ -103,6 +104,7 @@ export async function getSuggestionsList({commit, state}, text) {
             .then(response => response.json())
             .then(data =>{
                  // return data.filter(item=> item.resource_type === type)
+                data = prepareData(data, state.url.activities)
                 let filteredData = []
                 if(text) filteredData = filterItems(data, text)
                 return filteredData
