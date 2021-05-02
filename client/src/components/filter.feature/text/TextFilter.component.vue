@@ -4,7 +4,7 @@
     <div class="input-container">
     <input placeholder="Search Timeline" type="text" v-model="searchQuery" @keyup.enter="filterByText(searchQuery)" @input="suggestionsListDebounced(searchQuery)"/>
 <!--    <input placeholder="Search Timeline" type="text" @input="filterByText(searchQuery)" v-model="searchQuery"/>-->
-    <div class="search-icon" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
+    <div class="search-icon  main-color-green-bg" @click="filterByText(searchQuery)"><i class="fas fa-search"></i></div>
       <AutoSuggestList />
 
     </div>

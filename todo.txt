@@ -4,11 +4,11 @@
  * finish icon logic  ------------------------done
  * sort the filter types by alphabet----------done
  * made the filter dynamic
- * add debounced to text filter
+ * add debounced to text filter --------------вщту
  * change variables name
  *fix item toggle
  * make order in all components
- * change the main green color
+ * change the main green color-------------------done
  * add comments to the code
  * autofill check the props
  * garbage collector

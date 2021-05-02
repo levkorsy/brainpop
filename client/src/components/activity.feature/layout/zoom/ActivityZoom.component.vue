@@ -1,5 +1,5 @@
 <template>
-<div class="zoom-container" @click="openModal(activity.id)">
+<div class="zoom-container main-color-green" @click="openModal(activity.id)">
 <!--<a class="zoom-container" :href="'/zoom/'+activity.id">//   Another option to trigger modal using router(but refreshes the page)-->
   <span><i class="far fa-eye"></i></span>
   <span class="title">View work</span>

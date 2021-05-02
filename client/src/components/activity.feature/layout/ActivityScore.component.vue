@@ -1,5 +1,5 @@
 <template>
-<div class="score-container">
+<div class="score-container main-color-green">
   Score
   <strong>{{ activity.score }}/{{ activity.possible_score }}</strong>
 </div>

@@ -9,7 +9,7 @@
   <ActivityZoom v-if="type.options.zoom" :activity="activity"/>
 
   </div>
-  <div class="item-toggle" @click="showItem = !showItem">
+  <div class="item-toggle main-color-green" @click="showItem = !showItem">
     <i :class="showItem ? 'fas fa-chevron-left' : 'fas fa-chevron-right'" :title="showItem ? 'Hide' : 'Show'"></i>
   </div>
 </div>

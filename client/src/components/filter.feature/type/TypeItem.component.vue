@@ -1,5 +1,5 @@
 <template>
-  <button @click="filterByType(filterType.title)" :class="{'active': currentFilter === filterType.title}"><i class="fas fa-check-circle" v-if="currentFilter === filterType.title"></i>{{ filterType.title }}</button>
+  <button @click="filterByType(filterType.title)" class="main-color-green main-color-green-border" :class="{'active': currentFilter === filterType.title}"><i class="fas fa-check-circle main-color-green" v-if="currentFilter === filterType.title"></i>{{ filterType.title }}</button>
 
 </template>
 

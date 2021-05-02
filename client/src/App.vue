@@ -28,10 +28,19 @@ body {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #a5aeb7;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #008080;
+}
+.main-color-green{
+  color: #008080 !important;
+}
+.main-color-green-bg{
+  background-color: #008080 !important;
+}
+.main-color-green-border{
+  border-color: #008080 !important;
 }
 </style>
