@@ -11,9 +11,9 @@ export default {
         currentFilter: 'all_work',
         modalData: null,
         suggestionsList: [],
-        url:{
-            activities:'activities/v1',
-            main:'http://localhost:3000/'
+        url: {
+            activities: 'activities/v1',
+            main: 'http://localhost:3000/'
         }
     },
     actions,
@@ -22,12 +22,12 @@ export default {
         getActivities: state => {
             return state.activities;
         },
-
         getActivityTypes: state => {
             return state.activityTypes;
         },
+        //Returns objects of single activity type. Gets state and string(title)
         getActivityTypeById: (state) => (title) => {
-            return state.activityTypes.find(type => type.title === title)  ? state.activityTypes.find(type => type.title === title) : state.activityTypes.find(type => type.title === 'all_work')
+            return state.activityTypes.find(type => type.title === title) ? state.activityTypes.find(type => type.title === title) : state.activityTypes.find(type => type.title === 'all_work')
         },
         getCurrentFilterType: state => {
             return state.currentFilter;

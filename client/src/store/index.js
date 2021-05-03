@@ -3,7 +3,6 @@ import Vuex from "vuex";
 
 import activities from "./activities.store";
 
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({

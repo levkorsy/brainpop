@@ -14,12 +14,12 @@
             <h3>{{ activity.comment }}!</h3>
             <ActivityScore v-if="type.options.score" :activity="activity"/>
         </div>
-
     </div>
 </template>
 
 <script>
     import {mapGetters} from "vuex";
+
     import ActivityScore from "../ActivityScore.component";
     import ActivityDate from "../ActivityDate.component";
     import ActivityIcon from "../ActivityIcon.component";
@@ -27,23 +27,23 @@
     export default {
         name: "ZoomModal",
         components: {ActivityIcon, ActivityDate, ActivityScore},
+        props: {
+            activity: {
+                type: Object
+            }
+        },
         computed: {
-            // ...mapState("activities", ["activities"]),
             ...mapGetters("activities", ["getActivityTypeById"]),
 
             type: function () {
                 return this.getActivityTypeById(this.activity.resource_type)
             }
         },
-        props: {
-            activity: {
-                type: Object
-            }
-        },
+
         methods: {
+            //Function close modal. Dispatches action
             close() {
                 this.$store.dispatch("activities/resetDataForModal")
-
             }
         }
     }
@@ -68,7 +68,6 @@
         border: 3px solid #aaaaaa;
         border-radius: 18px;
         padding: 1rem;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -107,21 +106,18 @@
     .close-trigger:hover {
         opacity: 0.6;
         transform: scale(1.1);
-      transition: all ease-in-out 0.2s;
+        transition: all ease-in-out 0.2s;
     }
 
     storng {
         font-weight: 700;
     }
-
     .score {
         color: #0ea999;
+    /*//TODO check if need that class*/
     }
 
     .placeholder {
-        /*width: 50px;*/
-        /*height: 50px;*/
-        /*background: grey;*/
         border-radius: 50%;
     }
 </style>

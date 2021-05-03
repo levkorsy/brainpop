@@ -1,7 +1,10 @@
 //Structure===
-//--Main sector(clients, contacts)
-//------Tag (NA, BN, SC .....)
-//---------------Tag content|structure(name, elements, data.....)
+//--Title(quiz, movie, etc.)
+//------Options ({})
+//---------------score: Boolean
+//---------------zoom: Boolean
+// Better to use classes with constructor
+
 export const ActivityTypes = [
     {
         title: 'all_work',
@@ -44,7 +47,7 @@ export const ActivityTypes = [
             score: false,
             zoom: true
         }
-    },{
+    }, {
         title: 'make_a_movie',
         options: {
             score: false,
@@ -72,9 +75,6 @@ export const ActivityTypes = [
             zoom: true
         }
     },
-
-
-
 ];
 
 
