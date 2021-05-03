@@ -2,16 +2,20 @@
     <div class="container">
         <TextFilter/>
         <TypeFilter/>
-        <MonthActivity
+      <MonthActivity
                 v-for="(value, name) in activities"
                 :monthActivities="value" :key="name"
                 :month="getMonthTitle(name)"/>
         <Pagination/>
         <h2 v-if="!Object.keys(activities).length">No activities</h2>
-        <ZoomModal
+      <transition name="bounce">
+
+      <ZoomModal
                 v-if="modalData"
                 :activity="modalData"
         />
+      </transition>
+
     </div>
 </template>
 
@@ -62,6 +66,23 @@
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
+    }
+    .bounce-enter-active {
+      animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
 
 </style>

@@ -25,7 +25,6 @@
                 return this.$store.getters["activities/getActivityTypes"]
             }
         },
-
         components: {TypeItem},
     }
 </script>
@@ -40,10 +39,8 @@
 
     .btn-wrapper {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         justify-content: flex-start;
-        /*TODO remove one of them*/
         width: 100%;
     }
 

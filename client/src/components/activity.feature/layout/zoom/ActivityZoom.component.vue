@@ -37,4 +37,7 @@
         white-space: nowrap;
         margin-left: 0.5rem;
     }
+    .title:hover{
+      opacity: 0.9;
+    }
 </style>

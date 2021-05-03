@@ -23,14 +23,12 @@ export default {
     }
 };
 
-// TODO check if need to move it to the methods
 // Function for filter activities array by topic_data.name. Gets array of objects(activities), returns filtered array of objects(activities)
 export function filterItems(data, searchQuery) {
-    let searchResult = data.filter(item => {
+    return data.filter(item => {
         searchQuery = searchQuery.trim(); // Remove whitespace from both sides of a string
         searchQuery = searchQuery.toLowerCase(); //Convert the string to lowercase letters
         let afterRegex = searchQuery.replace(/[.*+\-?^${}()|[\]\\]/g, ""); // Remove symbols
         return item['topic_data']['name'].toLowerCase().includes(afterRegex);
-    });
-    return searchResult
+    })
 }

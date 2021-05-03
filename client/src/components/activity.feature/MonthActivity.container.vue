@@ -1,7 +1,7 @@
 <template>
     <div class="month-container">
         <div class="month" @click="showMonthItem = !showMonthItem" title="Show/Hide">{{ month }}</div>
-        <ActivityItem
+      <ActivityItem
                 v-for="activity in monthActivities"
                 :key="activity.id"
                 :activity="activity"
