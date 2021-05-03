@@ -1,6 +1,8 @@
 import * as actions from "./actions";
 import * as mutations from "./mutations";
 import {ActivityTypes} from "@/global_constans/ActivityTypes"
+import {sortDataByMonth} from "../../utils/sortActivityDataByMonth"
+import {filterActivities} from "../../utils/filterUtils"
 
 export default {
     namespaced: true,
@@ -8,7 +10,10 @@ export default {
     state: {
         activities: [],
         activityTypes: ActivityTypes,
-        currentFilter: 'all_work',
+        currentFilter: {
+            value:'all_work',
+            type: 'type'
+        },
         modalData: null,
         suggestionsList: [],
         url: {
@@ -21,7 +26,8 @@ export default {
     mutations,
     getters: {
         getActivities: state => {
-            return state.activities;
+            console.log(filterActivities(state.activities, state.currentFilter))
+            return sortDataByMonth(filterActivities(state.activities, state.currentFilter));
         },
         getActivityTypes: state => {
             return state.activityTypes;

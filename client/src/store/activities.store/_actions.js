@@ -40,18 +40,23 @@ export async function fetchActivities({commit, state}, amount = 10) {
             .then(response => response.json())
             .then(async data => {
                 data = prepareData(data, state.url.activities)  // preparing data due to the API
-                if (amount && data.length > amount) data.length = amount // simulating pagination
-                commit("activities/setActivities", data, {root: true})}
+                if (amount && data.length > amount) data.length = amount
+                return sortDataByMonth(data) // sorting data by month
+            }).then(sortedData => commit("activities/setActivities", sortedData, {root: true})
         )
     } catch (e) {
     }
 }
 
 export async function getDataForModal({commit, state}, id) {
-    let singleActivity = state.activities.find(item => {
+    let singleActivity = null
+    // Find single activity data
+    for (const [key, value] of Object.entries(state.activities)) {
+        singleActivity = value.find(item => {
             return item.id === id
         })
         singleActivity && commit("setDataForModal", singleActivity)
+    }
 }
 
 export async function resetDataForModal({commit, state}) {

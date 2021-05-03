@@ -2,19 +2,19 @@
     <div class="container">
         <TextFilter/>
         <TypeFilter/>
-      <MonthActivity
+        <MonthActivity
                 v-for="(value, name) in getActivities"
                 :monthActivities="value" :key="name"
                 :month="getMonthTitle(name)"/>
         <Pagination/>
         <h2 v-if="!Object.keys(getActivities).length">No activities</h2>
-      <transition name="bounce">
+        <transition name="bounce">
 
-      <ZoomModal
-                v-if="modalData"
-                :activity="modalData"
-        />
-      </transition>
+            <ZoomModal
+                    v-if="modalData"
+                    :activity="modalData"
+            />
+        </transition>
 
     </div>
 </template>
@@ -31,7 +31,7 @@
     import Pagination from "../components/activity.feature/Pagination.component";
 
     export default {
-        name: 'home',
+        name: 'ActivitiesView',
         computed: {
             ...mapState("activities", ["modalData"]),
             ...mapGetters("activities", ["getActivities"]),
@@ -69,21 +69,21 @@
         margin-left: auto;
     }
     .bounce-enter-active {
-      animation: bounce-in .5s;
+        animation: bounce-in .5s;
     }
     .bounce-leave-active {
-      animation: bounce-in .5s reverse;
+        animation: bounce-in .5s reverse;
     }
     @keyframes bounce-in {
-      0% {
-        transform: scale(0);
-      }
-      50% {
-        transform: scale(1.5);
-      }
-      100% {
-        transform: scale(1);
-      }
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 
 </style>

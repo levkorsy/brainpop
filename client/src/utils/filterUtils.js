@@ -20,6 +20,7 @@ export default {
         suggestionsList(text) {
             this.$store.dispatch("activities/getSuggestionsList", text)
         },
+
     }
 };
 
@@ -32,4 +33,17 @@ export function filterItems(data, searchQuery) {
         let afterRegex = searchQuery.replace(/[.*+\-?^${}()|[\]\\]/g, ""); // Remove symbols
         return item['topic_data']['name'].toLowerCase().includes(afterRegex);
     })
+}
+
+export function filterActivities(data, filter){
+    console.log(data, filter)
+    if(!filter) return data
+    switch (filter.type) {
+        case "type":
+            return data.filter(item => item.resource_type === filter.value)
+        case "text":
+            return data
+        default:
+            return data
+    }
 }
