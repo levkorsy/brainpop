@@ -16,12 +16,6 @@
             }
         },
         mixins: [openModal],
-        methods: {
-            //TODO check func name
-            open(id) {
-                this.$store.dispatch("activities/getDataForModal", {id})
-            }
-        },
     }
 </script>
 

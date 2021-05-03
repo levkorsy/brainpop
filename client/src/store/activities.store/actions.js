@@ -66,10 +66,11 @@ export async function getCurrentFilter({commit, state}, type) {
 
 export async function filterByTypeForVuex({commit, state}, type) {
     try {
+        //API request to get activities
         fetch(state.url.main + state.url.activities)
             .then(response => response.json())
             .then(data => {
-                data = prepareData(data, state.url.activities)
+                data = prepareData(data, state.url.activities) // preparing data due to the API
                 return data.filter(item => item.resource_type === type)
             })
             .then(async data => {
@@ -83,10 +84,11 @@ export async function filterByTypeForVuex({commit, state}, type) {
 
 export async function filterByTextForVuex({commit, state}, text) {
     try {
+        //API request to get activities
         fetch(state.url.main + state.url.activities)
             .then(response => response.json())
             .then(data => {
-                data = prepareData(data, state.url.activities)
+                data = prepareData(data, state.url.activities) // preparing data due to the API
                 return filterItems(data, text)
             })
             .then(async data => {
@@ -99,6 +101,7 @@ export async function filterByTextForVuex({commit, state}, text) {
 
 export async function getSuggestionsList({commit, state}, text) {
     try {
+        //API request to get activities
         fetch(state.url.main + state.url.activities)
             .then(response => response.json())
             .then(data => {
@@ -108,8 +111,8 @@ export async function getSuggestionsList({commit, state}, text) {
                 return filteredData
             })
             .then(data => {
-                let filteredData = _.uniqBy(data, 'topic_data.name');
-                return filteredData
+                // Return uniq objects using lodash
+                return _.uniqBy(data, 'topic_data.name')
             })
             .then(filteredData => commit("activities/setSuggestionsList", filteredData, {root: true})
             )

@@ -1,20 +1,8 @@
- * animation css
  * format types title (uppercase)
- * change trigger modal ----------------------done
- * finish icon logic  ------------------------done
- * sort the filter types by alphabet----------done
  * made the filter dynamic
- * add debounced to text filter --------------вщту
- * change variables name
  *fix item toggle
- * make order in all components
- * change the main green color-------------------done
- * add comments to the code
  * autofill check the props
  * garbage collector
- * debounced not to send every input
  *fix the bug with setter in comouted
  * fix css of sugest list
- * think about global css
- * loader ???????
 * router with functions

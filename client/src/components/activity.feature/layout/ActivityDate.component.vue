@@ -14,9 +14,8 @@
         },
         methods: {
             //Function formats date. Get string, return string from object(moment)
-            formatDate() {
-                //TODO check if need to use argument
-                return moment(parseInt(this.date)).format('MMM D YYYY, h:mm a')
+            formatDate(date) {
+                return moment(parseInt(date)).format('MMM D YYYY, h:mm a')
             }
         },
     }

@@ -112,10 +112,6 @@
     storng {
         font-weight: 700;
     }
-    .score {
-        color: #0ea999;
-    /*//TODO check if need that class*/
-    }
 
     .placeholder {
         border-radius: 50%;
