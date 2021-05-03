@@ -12,13 +12,17 @@
 </template>
 
 <script>
-import {mapState} from "vuex";
+import {mapGetters, mapState} from "vuex";
 import filterByText from "@/utils/filterUtils";
 
 export default {
   name: "AutoSuggestList",
   computed: {
-    ...mapState("activities", ["suggestionsList"]),
+    ...mapGetters("activities", ["getSuggestions"]),
+    suggestionsList: {
+      get () {return this.getSuggestions},
+      set () {} //
+    }
   },
   mixins: [filterByText],
 }
@@ -52,8 +56,6 @@ export default {
         background-color: #e6e6e6;
       }
     }
-
   }
-
 }
 </style>

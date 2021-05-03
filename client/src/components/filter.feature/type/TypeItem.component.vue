@@ -40,7 +40,7 @@
         margin: 2px;
         cursor: pointer;
         flex: 1;
-
+        text-transform: capitalize;
         &:not(:last-child) {
             margin-right: 5px;
         }

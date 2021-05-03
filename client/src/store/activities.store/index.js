@@ -1,6 +1,6 @@
 import * as actions from "./actions";
 import * as mutations from "./mutations";
-import {ActivityTypes} from "../../global_constans/ActivityTypes"
+import {ActivityTypes} from "@/global_constans/ActivityTypes"
 
 export default {
     namespaced: true,
@@ -14,7 +14,8 @@ export default {
         url: {
             activities: 'activities/v1',
             main: 'http://localhost:3000/'
-        }
+        },
+
     },
     actions,
     mutations,
@@ -35,5 +36,6 @@ export default {
         getSuggestions: state => {
             return state.suggestionsList;
         },
-    }
+    },
+
 };

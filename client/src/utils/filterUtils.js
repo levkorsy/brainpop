@@ -25,6 +25,7 @@ export default {
 
 // Function for filter activities array by topic_data.name. Gets array of objects(activities), returns filtered array of objects(activities)
 export function filterItems(data, searchQuery) {
+    console.log(data, searchQuery)
     return data.filter(item => {
         searchQuery = searchQuery.trim(); // Remove whitespace from both sides of a string
         searchQuery = searchQuery.toLowerCase(); //Convert the string to lowercase letters

@@ -3,7 +3,10 @@ import router from '@/router'
 
 import {sortDataByMonth} from "../../utils/sortActivityDataByMonth"
 import {filterItems} from "../../utils/filterUtils"
-//TODO comment and expanation why
+
+//*********************//
+//Explanation for filtering. I have decided to simulate filtering via server to get data "up-to-date", this is the reason why every filter action sends request to the server
+//*********************//
 
 // Function for reformat data for API-2. Gets array of object and string(url), returns array
 function prepareData(data, url) {

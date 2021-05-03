@@ -1,8 +1,5 @@
- * format types title (uppercase)
- * made the filter dynamic
  *fix item toggle
  * autofill check the props
  * garbage collector
  *fix the bug with setter in comouted
- * fix css of sugest list
 * router with functions
