@@ -1,5 +1,4 @@
  *fix item toggle
  * autofill check the props
  * garbage collector
- *fix the bug with setter in comouted
 * router with functions
