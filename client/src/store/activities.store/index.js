@@ -10,10 +10,7 @@ export default {
     state: {
         activities: [],
         activityTypes: ActivityTypes,
-        currentFilter: {
-            value:'all_work',
-            type: 'type'
-        },
+        currentFilter: null,
         modalData: null,
         suggestionsList: [],
         url: {

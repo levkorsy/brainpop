@@ -34,8 +34,8 @@
         methods: {
             // Function dispatches activity for getting suggestion list. Get string. Used debounce function of lodash
             suggestionsListDebounced: _.debounce(function (text) {
-                this.$store.dispatch("activities/getSuggestionsList", text)
-            }, 1000)
+                // this.$store.dispatch("activities/getSuggestionsList", text)
+this.suggestionsList(text)          }, 500)
         }
     }
 </script>

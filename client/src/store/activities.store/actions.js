@@ -2,7 +2,7 @@ import _ from 'lodash'
 import router from '@/router'
 
 import {sortDataByMonth} from "../../utils/sortActivityDataByMonth"
-import {filterItems} from "../../utils/filterUtils"
+import {filterItems, filterActivities} from "../../utils/filterUtils"
 
 //*********************//
 //Explanation for filtering. I have decided to simulate filtering via server to get data "up-to-date", this is the reason why every filter action sends request to the server
@@ -62,58 +62,42 @@ export async function getCurrentFilter({commit, state}, type) {
     commit("setCurrentFilter", type)
 }
 
-export async function filterByTypeForVuex({commit, state}, type) {
-    try {
-        //API request to get activities
-        fetch(state.url.main + state.url.activities)
-            .then(response => response.json())
-            .then(data => {
-                data = prepareData(data, state.url.activities) // preparing data due to the API
-                return data.filter(item => item.resource_type === type)
-            })
-            .then(async data => {
-                let sortedData = sortDataByMonth(data)
-                return sortedData
-            }).then(sortedData => commit("activities/setActivities", sortedData, {root: true})
-        )
-    } catch (e) {
-    }
-}
-
-export async function filterByTextForVuex({commit, state}, text) {
-    try {
-        //API request to get activities
-        fetch(state.url.main + state.url.activities)
-            .then(response => response.json())
-            .then(data => {
-                data = prepareData(data, state.url.activities) // preparing data due to the API
-                return filterItems(data, text)
-            })
-            .then(async data => {
-                return sortDataByMonth(data)
-            }).then(sortedData => commit("activities/setActivities", sortedData, {root: true})
-        )
-    } catch (e) {
-    }
-}
-
 export async function getSuggestionsList({commit, state}, text) {
-    try {
-        //API request to get activities
-        fetch(state.url.main + state.url.activities)
-            .then(response => response.json())
-            .then(data => {
-                data = prepareData(data, state.url.activities)
-                let filteredData = []
-                if (text) filteredData = filterItems(data, text)
-                return filteredData
-            })
-            .then(data => {
-                // Return uniq objects using lodash
-                return _.uniqBy(data, 'topic_data.name')
-            })
-            .then(filteredData => commit("activities/setSuggestionsList", filteredData, {root: true})
-            )
-    } catch (e) {
-    }
+text && commit("activities/setSuggestionsList", filterActivities(state.activities,  {value: text, type:'text'}), {root: true})
+!text && commit("activities/setSuggestionsList", [], {root: true})
 }
+// export async function filterByTypeForVuex({commit, state}, type) {
+//     try {
+//         //API request to get activities
+//         fetch(state.url.main + state.url.activities)
+//             .then(response => response.json())
+//             .then(data => {
+//                 data = prepareData(data, state.url.activities) // preparing data due to the API
+//                 return data.filter(item => item.resource_type === type)
+//             })
+//             .then(async data => {
+//                 let sortedData = sortDataByMonth(data)
+//                 return sortedData
+//             }).then(sortedData => commit("activities/setActivities", sortedData, {root: true})
+//         )
+//     } catch (e) {
+//     }
+// }
+
+// export async function filterByTextForVuex({commit, state}, text) {
+//     try {
+//         //API request to get activities
+//         fetch(state.url.main + state.url.activities)
+//             .then(response => response.json())
+//             .then(data => {
+//                 data = prepareData(data, state.url.activities) // preparing data due to the API
+//                 return filterItems(data, text)
+//             })
+//             .then(async data => {
+//                 return sortDataByMonth(data)
+//             }).then(sortedData => commit("activities/setActivities", sortedData, {root: true})
+//         )
+//     } catch (e) {
+//     }
+// }
+

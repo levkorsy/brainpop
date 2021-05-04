@@ -1,4 +1,1 @@
- *fix item toggle
- * autofill check the props
- * garbage collector
-* router with functions
+ *fix pagination

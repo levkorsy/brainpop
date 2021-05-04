@@ -1,8 +1,8 @@
 <template>
     <button class="main-color-green main-color-green-border"
             @click="filterByType(filterType.title)"
-            :class="{'active': currentFilter === filterType.title}">
-        <i class="fas fa-check-circle main-color-green" v-if="currentFilter === filterType.title"></i>
+            :class="{'active': setStyleActiveFilter(currentFilter, filterType)}">
+        <i class="fas fa-check-circle main-color-green" v-if="setStyleActiveFilter(currentFilter, filterType)"></i>
         {{filterType.title }}
     </button>
 
@@ -26,6 +26,12 @@
             ...mapState("activities", ["currentFilter"]),
         },
         mixins: [filterByType],
+        methods:{
+            setStyleActiveFilter(currentFilter, filterType){
+                if(currentFilter) return currentFilter.value === filterType.title
+                if(filterType.title === 'all_work' && !currentFilter) return true
+            }
+        }
     }
 </script>
 
