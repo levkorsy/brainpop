@@ -16,7 +16,7 @@
             //Function dispatches action for fetch activities with amount of activities
             fetchMoreActivities(amount) {
                 this.activitiesAmount += 10
-                this.$store.dispatch("activities/fetchActivities", amount)
+                this.$store.dispatch("activities/fetchActivities", this.activitiesAmount)
             }
         }
     }

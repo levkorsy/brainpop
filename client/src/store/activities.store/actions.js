@@ -31,6 +31,7 @@ function prepareData(data, url) {
 }
 
 export async function fetchActivities({commit, state}, amount = 10) {
+    console.log(amount);
     //Setting url due to the current route
     router.currentRoute.name === 'home' && commit("setActivitiesUrl", 'activities/v1')
     router.currentRoute.name === 'home-v-2' && commit("setActivitiesUrl", 'activities/v2')
