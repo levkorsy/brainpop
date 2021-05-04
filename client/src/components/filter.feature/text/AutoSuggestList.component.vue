@@ -20,8 +20,11 @@ export default {
   computed: {
     ...mapGetters("activities", ["getSuggestions"]),
     suggestionsList: {
-      get () {return this.getSuggestions},
-      set () {} //
+      get() {
+        return this.getSuggestions
+      },
+      set() {
+      }
     }
   },
   mixins: [filterByText],

@@ -22,8 +22,8 @@ export default {
     actions,
     mutations,
     getters: {
+        //Returns object of activities sorted by month(every key - month, value array of activities). Gets state
         getActivities: state => {
-            console.log(filterActivities(state.activities, state.currentFilter))
             return sortDataByMonth(filterActivities(state.activities, state.currentFilter));
         },
         getActivityTypes: state => {

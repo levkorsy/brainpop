@@ -5,27 +5,27 @@ import Home from '../views/Home.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home,
-  },
-  {
-    path: '/zoom/:id',
-    name: 'zoom',
-    component: Home,
-  },
-  {
-    path: '/v2',
-    name: 'home-v-2',
-    component: Home,
-  },
+    {
+        path: '/',
+        name: 'home',
+        component: Home,
+    },
+    {
+        path: '/zoom/:id',
+        name: 'zoom',
+        component: Home,
+    },
+    {
+        path: '/v2',
+        name: 'home-v-2',
+        component: Home,
+    },
 ];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes,
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes,
 });
 
 export default router;
